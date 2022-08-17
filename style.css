@@ -80,6 +80,7 @@ svg {
 
 
   --clr-neutral-900: hsl(233, 12%, 13%);
+  --clr-neutral-200: hsl(0, 0%, 95%);
   --clr-neutral-100: hsl(0, 0%, 100%);
   --ff-primary: 'Be Vietnam Pro', sans-serif;
 
@@ -167,6 +168,25 @@ svg {
 .padding-block-900 {padding-block: var(--size-900);}
 .padding-inline-900 {padding-inline: var(--size-900);}
 
+.margin-bottom-700 {
+  -webkit-margin-after: var(--size-700);
+          margin-block-end: var(--size-700);
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media (max-width: 50em) {
+  .text-center-sm-only {
+    text-align: center;;
+  }
+
+  .text-center-sm-only p {
+    margin-inline: auto;
+  }
+  
+}
 
 .visually-hidden {
   position: absolute;
@@ -406,6 +426,10 @@ P[data-width="wide"] {
 
 .numbered-items {
   counter-reset: count;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
 }
 
 .numbered-items li {
@@ -472,6 +496,38 @@ P[data-width="wide"] {
     grid-column: 2 / -1;
   }
 }
+
+
+/* carousel - slider */
+
+.slider {
+  display: flex;
+  list-style: none;
+  gap: var(--size-600);
+  
+}
+
+.slider > * {
+  width: 100%;
+  position: relative;
+  padding: var(--size-800) var(--size-400);
+  flex: 0 0 auto;
+  border-radius: var(--size-200);
+  background: var(--clr-neutral-200);
+  border: 1px solid magenta;
+  width: 400px;
+}
+.slider img {
+  width: var(--size-800);
+  position: absolute;
+  inset: 0;
+  margin-inline: auto;
+  top: -32px;
+  
+  
+}
+
+
 
 /* FOOTER */
 

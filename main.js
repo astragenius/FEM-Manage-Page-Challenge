@@ -1,3 +1,5 @@
+import A11YSlider from "a11y-slider";
+
 const navToggle = document.querySelector('.mobile-nav-toggle');
 const primaryNav = document.querySelector('.primary-navigation');
 const primaryHeader = document.querySelector('.primary-header');
@@ -13,3 +15,14 @@ navToggle.addEventListener('click', () => {
     primaryHeader.toggleAttribute('data-overlay');
     body.toggleAttribute('data-overlay');
 })
+
+const slider = new A11YSlider(document.querySelector('.slider'), {
+    adaptiveHeight: true,
+    dots: false,
+    skipBtn: false,
+    centerMode: true,
+    autoplay: true,
+    slidesToShow: 2
+  });
+
+console.log(slider)
