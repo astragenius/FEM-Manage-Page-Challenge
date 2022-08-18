@@ -1,5 +1,7 @@
 import A11YSlider from "a11y-slider";
 
+
+
 const navToggle = document.querySelector('.mobile-nav-toggle');
 const primaryNav = document.querySelector('.primary-navigation');
 const primaryHeader = document.querySelector('.primary-header');
@@ -17,12 +19,17 @@ navToggle.addEventListener('click', () => {
 })
 
 const slider = new A11YSlider(document.querySelector('.slider'), {
-    adaptiveHeight: true,
-    dots: false,
-    skipBtn: false,
-    centerMode: true,
-    autoplay: true,
-    slidesToShow: 2
+  adaptiveHeight: false,
+  dots: true,
+  centerMode: true,
+  arrows: false,
+  responsive: {
+    480: {
+      dots: false,
+     
+    }
+  }
+  
   });
 
 console.log(slider)
