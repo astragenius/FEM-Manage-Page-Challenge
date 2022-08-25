@@ -173,6 +173,10 @@ svg {
           margin-block-end: var(--size-700);
 }
 
+.mx-auto {
+  margin-inline: auto;
+}
+
 .text-center {
   text-align: center;
 }
@@ -328,7 +332,7 @@ P[data-width="wide"] {
 @media (max-width: 50em) {
   .primary-navigation {
     display: none;
-
+    z-index: 1000;
     position: fixed;
     padding: var(--size-700);
     background-color: var(--clr-neutral-100);
@@ -378,6 +382,8 @@ P[data-width="wide"] {
     display: block;
   }
 
+  
+
   .mobile-nav-toggle {
     display: block;
     position: fixed;
@@ -386,12 +392,22 @@ P[data-width="wide"] {
     cursor: pointer;
     background: transparent;
     border: none;
-    
+    width: 2em;
+    aspect-ratio: 1;
+    background-image: url('/images/icon-hamburger.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
   }
-  .mobile-nav-toggle .icon-close {
-    display: none;
+  .mobile-nav-toggle[aria-expanded='true'] {
+
+    background-image: url('/images/icon-close.svg');
+    background-repeat: no-repeat;
+
   }
+  
 }
+
 
 
 /* CTA */
@@ -423,6 +439,19 @@ P[data-width="wide"] {
 
 /* Numbered list */
 
+.sales-points::before {
+  background-image: url('/images/bg-tablet-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  z-index: -100;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 87%;
+  max-height: 70vh;
+  max-height: 70dvh;
+  aspect-ratio: 1 / 1.2;
+}
 
 .numbered-items {
   counter-reset: count;
@@ -585,6 +614,40 @@ P[data-width="wide"] {
   background-color: var(--clr-accent-400);
 }
 
+
+/* Image with blob bg */
+
+.hero__image {
+ 
+}
+
+@media (max-width: 50em) {
+
+  .hero__image {
+    order: -1;
+  }
+}
+
+.hero__image::before {
+  content: '';
+  background-image: url('/images/bg-tablet-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  z-index: -100;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 87%;
+  max-height: 70vh;
+  max-height: 70dvh;
+  aspect-ratio: 1 / 1.2;
+}
+
+@media (min-width: 50em) {
+  .hero__image::before {
+    width: 45%;
+  }
+}
 
 
 
