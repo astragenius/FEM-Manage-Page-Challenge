@@ -491,6 +491,8 @@ P[data-width="wide"] {
   grid-row: 1 / 2;
   grid-column: 2 / 3;
   line-height: 1;
+  
+  
 }
 
 .numbered-items div::after,
